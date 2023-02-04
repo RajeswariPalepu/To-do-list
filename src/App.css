@@ -1,0 +1,255 @@
+.App {
+  text-align: center;
+}
+.p{
+  position: relative;
+  left: -77px !important;
+}
+.cancel{
+  position: relative;
+  left: 307px !important;
+}
+.p1{
+  position: relative;
+  left: -63px !important;
+}
+.p2{
+  position: relative;
+  left: -82px !important;
+}
+.addtask:hover{
+  position: relative;
+  left:100px !important;
+  color: rgb(255, 127, 127);
+}
+.content-right {
+float: right !important;
+}
+.label1 {
+  position: relative;
+    left: -260px !important;
+    margin-bottom: 6px !important;
+    margin-top: 25px !important;
+}
+.popup{
+  /* margin:-39px 0px 0px 0px */
+  position: relative;
+    left: -519px !important;
+    top: -182px !important;
+}
+.profile{
+  width: 50px !important;
+  position: relative !important;
+  right: -1560px !important;
+  border-radius: 150px !important;
+ }
+ .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+  font-size: 25px!important;
+ }
+ .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected {
+  font-size: 15px!important;
+ }
+ .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  font-size: 25px!important;
+  position: relative;
+left:-90px;
+bottom: -10px;
+}
+.css-bkrceb-MuiButtonBase-root-MuiPickersDay-root {
+  font-size: 1rem!important;
+}
+.css-raiqh1-MuiTypography-root-MuiDayPicker-weekDayLabel {
+  font-size: 1rem!important;
+}
+
+ .carddwn{
+  margin-top: 200px!important;
+ }
+ /* .submit1:hover{
+  background-color:rgb(234, 227, 227) !important;
+ } */
+ .hover1:hover{
+background-color:rgb(234, 227, 227) !important;
+ }
+ .status{
+  background-color: rgb(234, 227, 227) !important;
+ }
+ .status2{
+  position: relative;
+  left: 63px !important;
+  padding: 235px !important;
+  padding-top: 8px !important;
+  padding-left: 13px !important;
+ }
+ /* .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+ position: relative;
+    left: 63px !important;
+    padding: 235px !important;
+    padding-top: 8px !important;
+    padding-left: 13px !important;
+ } */
+ .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+font-size: 19px!important;
+ }
+.css-46bh2p-MuiCardContent-root:last-child {
+  position: relative;
+  left: -1px !important;
+}
+.css-bkrceb-MuiButtonBase-root-MuiPickersDay-root {
+font-size: 32px;
+}
+ .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root {
+font-size: 25px!important;
+ }
+ .css-1x51dt5-MuiInputBase-input-MuiInput-input {
+  font-size: 25px!important;
+ }
+ .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  margin-bottom: 30px!important;
+  width: 100%!important;
+ }
+ .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  width: 100%!important;
+  margin-bottom: 30px!important;
+ }
+ .css-1ri6ub7-MuiPaper-root-MuiCard-root{
+  margin-right: 10px !important;
+  margin-bottom: 20px !important;
+  width: 350px !important;
+  position: relative !important;
+left: 65px !important;
+
+ }
+ .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root {
+  font-size: 25px!important;
+ }
+ .css-1knaqv7-MuiButtonBase-root-MuiButton-root{
+  width: 173px;
+  background-color: beige !important;
+}
+.css-1knaqv7-MuiButtonBase-root-MuiButton-root {
+font-size: 15px!important;
+}
+.css-1t6e9jv-MuiCardActions-root{
+  margin-left: 10px !important;
+  margin-bottom: 10px !important;
+  position: relative;
+  left: 68px !important ;
+}
+ .d-flex1{
+  display: flex !important;
+ }
+ .space{
+  position: relative;
+    margin-right: 250px !important;
+ }
+
+.modal-dialog {
+  width: 299px !important;
+  margin: 10px !important;
+}
+.modal-body {
+  position: relative;
+  padding: 38px !important;
+}
+/* .css-46bh2p-MuiCardContent-root:last-child {
+  padding: 0px !important;
+  height: 60px;
+ } */
+ .css-h93ljk-MuiTypography-root{
+  position: relative;
+  left: -123px !important;
+  /* float: left; */
+  
+ }
+.middle{
+  position: relative;
+    left: 300px !important;
+}
+.btn-lg{
+  margin-bottom: -97px !important;
+    margin-top: -31px !important;
+    margin-left: -266px !important;
+}
+.stpswd{
+  position: relative;
+    left: -233px !important;
+    margin-bottom: 6px !important;
+    margin-top: 28px !important;
+}
+.cnfmpswd {
+  position: relative;
+    left:-217px !important;
+    margin-bottom: 6px !important;
+    margin-top: 28px !important;
+}
+.frgtpswd{
+  margin-left: -440px !important;
+  position: relative !important;
+  bottom: -13px !important;
+}
+.Nwpswd{
+  position: relative;
+    left: -230px !important;
+    margin-bottom: 6px !important;
+    margin-top: 28px !important;
+}
+.pswd{
+  position: relative;
+    left: -245px !important;
+    margin-bottom: 6px !important;
+    margin-top: 28px !important;
+}
+.Reg{
+  position: relative;
+    left: -241px !important;
+    margin-bottom: 6px !important;
+    margin-top: 30px !important;
+}
+.form-control {
+  width: 50% !important;
+}
+.Form1{
+  position: relative;
+    left: 132px !important;
+    top: -4px !important;
+}
+.modal-footer {
+  padding: 6px !important;
+  text-align: center !important;
+  border-top: 1px solid #e5e5e5 !important;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
