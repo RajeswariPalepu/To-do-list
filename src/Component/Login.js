@@ -1,30 +1,61 @@
 import React, { useState } from 'react'
 import Axios from 'axios';
+import { useNavigate } from "react-router-dom"
 import { Link } from 'react-router-dom';
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    const [errors, setErrors] = useState([])
+    const[loginErrors, setLoginErrors] = useState("")
+    let Navigate = useNavigate()
     const handleemail = (event) => {
         setEmail(event.target.value)
+        errors.length && errors.map((email, key) => {
+            if (email === "email") {
+                errors.splice(key, 1)
+                setErrors(errors)
+            }
+        })
     }
+
     const handlepassword = (event) => {
         setPassword(event.target.value)
+        errors.length && errors.map((password, key) => {
+            if (password === "password") {
+                errors.splice(key, 1)
+                setErrors(errors)
+            }
+        })
     }
     const handlesignin = () => {
-        Axios.post("", {
+        const reg1 = []
+        if (password === "") {
+            reg1.push("password")
+        }
+        if (email === "") {
+            reg1.push("email")
+        }
+        setErrors(reg1)
+        if(!reg1.length){
+            Axios.post("", {
+
             "email": email, "password1": password
         }, {
             headers:
             {
-                'x-api-key': ''
+                'x-api-key': 'x1veBkaEGM5Al1MBeAg3c9HI128dNytd3yFbtc6s'
             }
         }
         ).then((res) => {
             console.log(res);
+            setLoginErrors("")
+            Navigate("/dashboard")
         }).catch((error) => {
             console.log(error);
+           setLoginErrors("Login Failed")
         })
+        }
+       
     }
     return (
 
@@ -51,17 +82,32 @@ function Login() {
                                                     <div className="form-outline flex-fill mb-0 ">
                                                         <label className="form-label label1" >Email</label>
                                                         <input type="email" id="typeEmail" onChange={(e) => handleemail(e)}
-                                                            placeholder="Enter a valid email address" className="form-control my-3"  required/>
+                                                            placeholder="Enter a valid email address" className="form-control my-3" />
                                                     </div>
+                                                    {
+                                                   errors.map((email) => (
+                                                        email === "email" ? <p className='error'>Please Enter Email</p> : null
+                                                    ))
+                                                }
                                                 </div>
+
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0 ">
                                                         <label className="form-label pswd" >Password</label>
                                                         <input type="password" id="form3Example4c" onChange={(e) => handlepassword(e)}
-                                                            placeholder="Enter password" className="form-control" required="true"/>
+                                                            placeholder="Enter password" className="form-control" />
                                                     </div>
+                                                    {
+                                                   errors.map((password) => (
+                                                        password === "password" ? <p className='error'>Please Enter password</p> : null
+                                                    ))
+                                                }
+
                                                 </div>
+{
+                                                   loginErrors.length?<p className='error'>Please Enter valid Details</p>:null
+                                                }
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0 ">
@@ -71,9 +117,9 @@ function Login() {
                                                     </div>
                                                 </div>
                                                 <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                                    <Link to="/dashboard">
+                                                    
                                                         <button type="button" className="btn btn-primary btn-lg" onClick={() => handlesignin()}>Login</button>
-                                                    </Link>
+                                                   
                                                 </div>
                                             </form>
                                         </div>

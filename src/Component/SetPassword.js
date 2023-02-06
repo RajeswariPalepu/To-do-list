@@ -25,7 +25,7 @@ function SetPassword() {
         },{
             headers:
             {
-                'x-api-key': ''
+                'x-api-key': 'x1veBkaEGM5Al1MBeAg3c9HI128dNytd3yFbtc6s'
             }
         }
         ).then((res) => {

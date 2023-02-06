@@ -12,6 +12,8 @@ import Header from "./Component/Header";
 import Viewprofile from "./Component/Charts/Viewprofile";
 import Resetpassword from "./Component/Resetpassword";
 
+import SubComponentsPickers from "./Component/Charts/Calendar";
+
 
 function App() {
   return (
@@ -27,7 +29,9 @@ function App() {
           <Route path='/header' element={<Header/>} />
           <Route path='/viewprofile' element={<Viewprofile/>} />
           <Route path='/resetpassword' element={<Resetpassword/>} />
+          <Route path="/calendar" element={<SubComponentsPickers/>}/>
         </Routes>
+        
       </BrowserRouter>
 
 

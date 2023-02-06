@@ -9,7 +9,7 @@ function ForgotPassword() {
 
     const handleemail = (event) => {
         setEmail(event.target.value)
-    }
+    }   
     const handlepassword = (event) => {
         setPassword(event.target.value)
     }
@@ -19,13 +19,13 @@ function ForgotPassword() {
 
     const handlesubmit = () => {
         Axios.post("", {
-            "email": email, "passwd": password
+            "email": "abc@gmail.com", "passwd": password 
         }).then((res) => {
             console.log(res);
         },{
             headers:
             {
-                'x-api-key': ''
+                'x-api-key': 'x1veBkaEGM5Al1MBeAg3c9HI128dNytd3yFbtc6s'
             }
         }
         )

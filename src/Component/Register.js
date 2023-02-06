@@ -9,80 +9,94 @@ function Register() {
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState(false)
-     const[loader,setLoader]=useState(false)
-     const[reg,setReg]=useState()
+    const [loader, setLoader] = useState(false)
+    const [reg, setReg] = useState([])
     let Navigate = useNavigate()
     const handleuserName = (event) => {
         setUserName(event.target.value)
+        reg.length && reg.map((userName, key) => {
+            if (userName === "userName") {
+                reg.splice(key, 1)
+                setReg(reg)
+            }
+        })
     }
     const handleemail = (event) => {
         setEmail(event.target.value)
-    }
-const handleregister = async () => {
-    const reg1 = []
-    if(userName===""){
-        reg1.push("userName")
-    }
-    if(email===""){
-        reg1.push("email")
-    }
-    setReg(reg1)
-    if(reg1.length){
-        setLoader(true)
-        await Axios.post("", {
-            "email": email, "username": userName
-        }, {
-            headers:
-            {
-                'x-api-key': ''
+        reg.length && reg.map((email, key) => {
+            if (email === "email") {
+                reg.splice(key, 1)
+                setReg(reg)
             }
-        }).then((res) => {
-            if (res?.data?.message) {
-                setLoader(false)
-                setMessage(true)
-            }
-
-        }).catch((error) => {
-            // console.log(error);
-            // alert("Invalid Data")
-            
         })
     }
-    
+    const handleregister = async () => {
+        const reg1 = []
+        if (userName === "") {
+            reg1.push("userName")
+        }
+        if (email === "") {
+            reg1.push("email")
+        }
+        setReg(reg1)
+        if (!reg1.length) {
+            setLoader(true)
+            await Axios.post("", {
+                "email": email, "username": userName
+            }, {
+                headers:
+                {
+                    'x-api-key': 'x1veBkaEGM5Al1MBeAg3c9HI128dNytd3yFbtc6s'
+                }
+            }).then((res) => {
+                if (res?.data?.message) {
+                    
+                    setLoader(false)
+
+                    setMessage(true)
+                }
+
+            }).catch((error) => {
+                // console.log(error);
+                // alert("Invalid Data")
+
+            })
+        }
+
     }
-    const handlepopupok=()=>{
+    const handlepopupok = () => {
         setMessage(false)
         Navigate("/")
     }
-    const handlefail=()=>{
+    const handlefail = () => {
         setMessage(false)
         Navigate("/")
     }
     return (
 
-        <div className="p-5 text-center bg-image" 
+        <div className="p-5 text-center bg-image"
             style={{
                 backgroundImage: "url('https://i.pinimg.com/736x/06/28/94/06289464b221ac09a5a4535918e70dae.jpg')",
                 height: '100vh',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
-            backgroundColor: "#ccb4c8"
+                backgroundColor: "#ccb4c8"
             }}>
-               
-                
-                {
-                    loader?
-                <LoadingScreen
-        loading={true}
-        bgColor="rgba(255,255,255,0.8)"
-        spinnerColor="#9ee5f8"
-        textColor="#676767"
-        logoSrc=""
-        text=""
-      >
-        {" "}
-      </LoadingScreen> :null
-}
+
+
+            {
+                loader ?
+                    <LoadingScreen
+                        loading={true}
+                        bgColor="rgba(255,255,255,0.8)"
+                        spinnerColor="#9ee5f8"
+                        textColor="#676767"
+                        logoSrc=""
+                        text=""
+                    >
+                        {" "}
+                    </LoadingScreen> : null
+            }
             <section className="vh-100">
                 <div className="container h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100">
@@ -97,26 +111,29 @@ const handleregister = async () => {
                                                     <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0 ">
                                                         <label className="form-label Reg">User Name</label>
-                                                        <input type="text" id="form3Example1c " onChange={(e) => handleuserName(e)} className="form-control"
-                                                        placeholder='username' required="true"/>
+                                                        <input type="text" id="form3Example1c " onChange={(e) => handleuserName(e)} className="form-control" />
                                                     </div>
-                
+                                                    {
+                                                   reg.map((userName) => (
+                                                        userName === "userName" ? <p className='error'>Please Enter userName</p> : null
+                                                    ))
+                                                }
                                                 </div>
-                                                {
-                                                        reg?.length && reg.map((userName)=>{
-                                                            userName==="userName"? <p>Please Enter userName</p>:""
-                                                        })
-                                                    }
+                                               
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0 ">
                                                         <label className="form-label Reg">Your Email</label>
-                                                        <input type="email" id="form3Example3c" onChange={(e) => handleemail(e)} 
-                                                        className="form-control" placeholder='password' required="true"/>
+                                                        <input type="email" id="form3Example3c" onChange={(e) => handleemail(e)} className="form-control" />
                                                     </div>
                                                 </div>
+                                                {
+                                                    reg.map((email) => (
+                                                        email === "email" ? <p className='error'>Please Enter Email</p> : null
+                                                    ))
+                                                }
                                                 <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                                    <button type="button" className="btn btn-primary btn-lg" onClick={()=>handleregister()}>Register</button>
+                                                    <button type="button" className="btn btn-primary btn-lg" onClick={() => handleregister()}>Register</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -126,47 +143,52 @@ const handleregister = async () => {
                         </div>
                     </div>
                 </div>
-                
+
             </section>
             <div id="pop">
-            {
-                    message?
-                    <div style={{ display: 'block',
-                  width: 2726, 
-                  padding:1  }} >
-                    
-      <Modal.Dialog className='popup'>
-        <Modal.Body>
-          <p>
-           Successfully Registered.
-           Registration confirmation mail 
-           sent to provided mail.
-            Please check the mail.
-            </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" onClick={()=>handlepopupok()}> 
-           OK 
-          </Button>
-        </Modal.Footer>
-        <Modal.Body>
-          <p>
-           Registered failed.
-         Invalid data
-            </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" onClick={()=>handlefail()}> 
-           OK 
-          </Button>
-        </Modal.Footer>
-      </Modal.Dialog>
-    </div>:null}
-    
-    </div>
-    
+                {
+                    console.log(message)
+                }
+                {
+                    message ?(
+                        <div style={{
+                            display: 'block',
+                            width: 2726,
+                            padding: 1
+                        }} >
+
+                            <Modal.Dialog className='popup'>
+                                <Modal.Body>
+                                    <p>
+                                        Successfully Registered.
+                                        Registration confirmation mail
+                                        sent to provided mail.
+                                        Please check the mail.
+                                    </p>
+                                </Modal.Body>
+                                <Modal.Footer>
+                                    <Button variant="primary" onClick={() => handlepopupok()}>
+                                        OK
+                                    </Button>
+                                </Modal.Footer>
+                                <Modal.Body>
+                                    <p>
+                                        Registered failed.
+                                        Invalid data
+                                    </p>
+                                </Modal.Body>
+                                <Modal.Footer>
+                                    <Button variant="primary" onClick={() => handlefail()}>
+                                        OK
+                                    </Button>
+                                </Modal.Footer>
+                            </Modal.Dialog>
+                        </div> ): null}
+
+            </div>
+
         </div>
-        
+
     )
 }
 

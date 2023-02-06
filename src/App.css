@@ -61,6 +61,12 @@ bottom: -10px;
 .css-raiqh1-MuiTypography-root-MuiDayPicker-weekDayLabel {
   font-size: 1rem!important;
 }
+.error{
+  position: relative;
+  left: -81px;
+  color: red;
+  margin-top: 9px;
+}
 
  .carddwn{
   margin-top: 200px!important;
